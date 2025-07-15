@@ -27,7 +27,7 @@ const client = new Client({
   partials: [Partials.Message, Partials.Channel, Partials.GuildMember],
 });
 
-const TOKEN = 'MTEwNjkyODM4Mjc1MjYwMDIwNA.GShjU0.uxeBUas24mBtZcQ8O8ejezuGr234e36SENtEbo'; // Replace with your bot token
+const TOKEN = 'MTEwNjkyODM4Mjc1MjYwMDIwNA.GY-JAv.luwXMGRyvZlgasNIFcNALgZcwl0UkrC1EFjBGg'; // Replace with your bot token
 const CLIENT_ID = '1106928382752600204'; // Replace with your bot's client ID
 const GUILD_ID = '1394401573240574154'; // Replace with your test server's guild ID
 
