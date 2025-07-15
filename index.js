@@ -136,7 +136,7 @@ client.once('ready', async () => {
 
 function updateMemberStatus() {
   const totalMembers = client.guilds.cache.reduce((acc, guild) => acc + guild.memberCount, 0);
-  client.user.setActivity(`over ${totalMembers} leden`, { type: 3 }); // 3 = Watching
+  client.user.setActivity(`${totalMembers} members`, { type: 3 }); // 3 = Watching
 }
 
 client.on('guildMemberAdd', async (member) => {
