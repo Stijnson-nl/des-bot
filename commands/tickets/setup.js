@@ -28,9 +28,9 @@ module.exports = {
       const guild = interaction.guild;
       
       // Check if categories already exist
-      const existingQuestionCategory = guild.channels.cache.find(c => c.name === '📋 Question Tickets' && c.type === 4);
-      const existingSolicitationCategory = guild.channels.cache.find(c => c.name === '💼 Solicitation Tickets' && c.type === 4);
-      const existingComplaintCategory = guild.channels.cache.find(c => c.name === '⚠️ Complaint Tickets' && c.type === 4);
+      const existingQuestionCategory = guild.channels.cache.find(c => c.name === 'Question Tickets' && c.type === 4);
+      const existingSolicitationCategory = guild.channels.cache.find(c => c.name === 'Solicitation Tickets' && c.type === 4);
+      const existingComplaintCategory = guild.channels.cache.find(c => c.name === 'Complaint Tickets' && c.type === 4);
       
       if (existingQuestionCategory && existingSolicitationCategory && existingComplaintCategory) {
         // Categories exist, but we still want to send the ticket panel
