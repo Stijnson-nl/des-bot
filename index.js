@@ -256,11 +256,11 @@ async function handleTicketButton(interaction) {
   // Get or create the appropriate category
   let category;
   if (ticketType === 'question') {
-    category = interaction.guild.channels.cache.find(c => c.name === '📋 Question Tickets' && c.type === 4);
+    category = interaction.guild.channels.cache.find(c => c.name === 'Question Tickets' && c.type === 4);
   } else if (ticketType === 'solicitation') {
-    category = interaction.guild.channels.cache.find(c => c.name === '💼 Solicitation Tickets' && c.type === 4);
+    category = interaction.guild.channels.cache.find(c => c.name === 'Solicitation Tickets' && c.type === 4);
   } else if (ticketType === 'complaint') {
-    category = interaction.guild.channels.cache.find(c => c.name === '⚠️ Complaint Tickets' && c.type === 4);
+    category = interaction.guild.channels.cache.find(c => c.name === 'Complaint Tickets' && c.type === 4);
   }
   
   if (!category) {
@@ -274,9 +274,9 @@ async function handleTicketButton(interaction) {
   // Generate unique ticket number
   const existingTickets = interaction.guild.channels.cache.filter(
     channel => channel.name.startsWith('ticket-') && channel.parent && (
-      channel.parent.name === '📋 Question Tickets' ||
-      channel.parent.name === '💼 Solicitation Tickets' ||
-      channel.parent.name === '⚠️ Complaint Tickets'
+      channel.parent.name === 'Question Tickets' ||
+      channel.parent.name === 'Solicitation Tickets' ||
+      channel.parent.name === 'Complaint Tickets'
     )
   );
   const ticketNumber = getNextTicketNumber();
@@ -285,9 +285,9 @@ async function handleTicketButton(interaction) {
   // Check if user already has an open ticket
   const existingTicket = interaction.guild.channels.cache.find(
     channel => channel.name.startsWith('ticket-') && channel.parent && (
-      channel.parent.name === '📋 Question Tickets' ||
-      channel.parent.name === '💼 Solicitation Tickets' ||
-      channel.parent.name === '⚠️ Complaint Tickets'
+      channel.parent.name === 'Question Tickets' ||
+      channel.parent.name === 'Solicitation Tickets' ||
+      channel.parent.name === 'Complaint Tickets'
     ) && channel.topic && channel.topic.includes(user.id)
   );
   
