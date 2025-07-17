@@ -116,9 +116,9 @@ module.exports = {
         .setTitle('🎫 Support Ticket System')
         .setDescription('Select the type of ticket you want to create:')
         .addFields(
-          { name: '❓ Question', value: 'Ask a question about our services', inline: true },
-          { name: '💼 Solicitation', value: 'Request information or services', inline: true },
-          { name: '⚠️ Complaint', value: 'Report an issue or file a complaint', inline: true }
+          { name: '❓  Question', value: 'Ask a question about our services', inline: true },
+          { name: '💼  Solicitation', value: 'Request information or services', inline: true },
+          { name: '⚠️  Complaint', value: 'Report an issue or file a complaint', inline: true }
         )
         .setColor(EMBED_COLOR)
         .setFooter({ text: 'Click a button below to create a ticket' });
@@ -129,17 +129,17 @@ module.exports = {
           new ButtonBuilder()
             .setCustomId('ticket_question')
             .setLabel('Question')
-            .setEmoji('❓')
+           // .setEmoji('❓')
             .setStyle(ButtonStyle.Secondary),
           new ButtonBuilder()
             .setCustomId('ticket_solicitation')
             .setLabel('Solicitation')
-            .setEmoji('💼')
+         //   .setEmoji('💼')
             .setStyle(ButtonStyle.Secondary),
           new ButtonBuilder()
             .setCustomId('ticket_complaint')
             .setLabel('Complaint')
-            .setEmoji('⚠️')
+         //   .setEmoji('⚠️')
             .setStyle(ButtonStyle.Secondary)
         );
 
