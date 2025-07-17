@@ -110,28 +110,7 @@ client.once('ready', async () => {
   }
   // Set initial status
   updateMemberStatus();
-  // Controleer of iedereen de 'member' rol heeft
-  const guild = client.guilds.cache.get(GUILD_ID);
-  if (guild) {
-    const role = guild.roles.cache.find(r => r.name.toLowerCase() === 'member');
-    if (role) {
-      const members = await guild.members.fetch();
-      let count = 0;
-      for (const member of members.values()) {
-        if (!member.user.bot && !member.roles.cache.has(role.id)) {
-          try {
-            await member.roles.add(role);
-            count++;
-          } catch (err) {
-            console.error(`Failed to give 'member' role to ${member.user.tag}:`, err);
-          }
-        }
-      }
-      console.log(`Checked all members. Added 'member' role to ${count} users.`);
-    } else {
-      console.warn("Role 'member' not found!");
-    }
-  }
+  // (Automatic member role assignment removed)
 });
 
 function updateMemberStatus() {
@@ -139,20 +118,21 @@ function updateMemberStatus() {
   client.user.setActivity(`${totalMembers} members`, { type: 3 }); // 3 = Watching
 }
 
-client.on('guildMemberAdd', async (member) => {
-  // Zoek de rol "member" (hoofdlettergevoelig!)
-  const role = member.guild.roles.cache.find(r => r.name.toLowerCase() === 'member');
-  if (role) {
-    try {
-      await member.roles.add(role);
-      console.log(`Gave 'member' role to ${member.user.tag}`);
-    } catch (err) {
-      console.error(`Failed to give 'member' role to ${member.user.tag}:`, err);
-    }
-  } else {
-    console.warn("Role 'member' not found!");
-  }
-});
+// (Automatic member role assignment on join removed)
+// client.on('guildMemberAdd', async (member) => {
+//   // Zoek de rol "member" (hoofdlettergevoelig!)
+//   const role = member.guild.roles.cache.find(r => r.name.toLowerCase() === 'member');
+//   if (role) {
+//     try {
+//       await member.roles.add(role);
+//       console.log(`Gave 'member' role to ${member.user.tag}`);
+//     } catch (err) {
+//       console.error(`Failed to give 'member' role to ${member.user.tag}:`, err);
+//     }
+//   } else {
+//     console.warn("Role 'member' not found!");
+//   }
+// });
 
 client.on('guildMemberRemove', updateMemberStatus);
 

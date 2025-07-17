@@ -53,7 +53,7 @@ module.exports = {
       
       if (!existingQuestionCategory) {
         categories.question = await guild.channels.create({
-          name: '📋 Question Tickets',
+          name: 'Question Tickets',
           type: 4, // Category
           permissionOverwrites: [
             {
@@ -73,7 +73,7 @@ module.exports = {
       
       if (!existingSolicitationCategory) {
         categories.solicitation = await guild.channels.create({
-          name: '💼 Solicitation Tickets',
+          name: 'Solicitation Tickets',
           type: 4, // Category
           permissionOverwrites: [
             {
@@ -93,7 +93,7 @@ module.exports = {
       
       if (!existingComplaintCategory) {
         categories.complaint = await guild.channels.create({
-          name: '⚠️ Complaint Tickets',
+          name: 'Complaint Tickets',
           type: 4, // Category
           permissionOverwrites: [
             {
@@ -130,17 +130,17 @@ module.exports = {
             .setCustomId('ticket_question')
             .setLabel('Question')
             .setEmoji('❓')
-            .setStyle(ButtonStyle.Primary),
+            .setStyle(ButtonStyle.Secondary),
           new ButtonBuilder()
             .setCustomId('ticket_solicitation')
             .setLabel('Solicitation')
             .setEmoji('💼')
-            .setStyle(ButtonStyle.Success),
+            .setStyle(ButtonStyle.Secondary),
           new ButtonBuilder()
             .setCustomId('ticket_complaint')
             .setLabel('Complaint')
             .setEmoji('⚠️')
-            .setStyle(ButtonStyle.Danger)
+            .setStyle(ButtonStyle.Secondary)
         );
 
       // Send the ticket panel
