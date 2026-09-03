@@ -1,0 +1,6 @@
+services:
+  des-bot:
+    build: .
+    environment:
+      DISCORD_TOKEN: ${DISCORD_TOKEN}
+    restart: unless-stopped
