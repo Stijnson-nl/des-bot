@@ -41,6 +41,9 @@ const client = new Client({
 });
 
 const TOKEN = process.env.DISCORD_TOKEN; // Replace with your bot token
+if (!TOKEN) {
+  throw new Error("DISCORD_TOKEN ontbreekt");
+}
 const CLIENT_ID = '1106928382752600204'; // Replace with your bot's client ID
 const GUILD_ID = '1394401573240574154'; // Replace with your test server's guild ID
 
